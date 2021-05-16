@@ -1,0 +1,48 @@
+PODS:
+  - Alamofire (4.9.1)
+  - PromiseKit (4.5.2):
+    - PromiseKit/Foundation (= 4.5.2)
+    - PromiseKit/QuartzCore (= 4.5.2)
+    - PromiseKit/UIKit (= 4.5.2)
+  - PromiseKit/CoreLocation (4.5.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/CorePromise (4.5.2)
+  - PromiseKit/Foundation (4.5.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/MapKit (4.5.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.5.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.5.2):
+    - PromiseKit/CorePromise
+  - ReverseExtension (0.6.0)
+  - SnapKit (4.0.1)
+  - Toolbar (0.7.3)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - PromiseKit (~> 4.4)
+  - PromiseKit/CoreLocation
+  - PromiseKit/MapKit
+  - ReverseExtension
+  - SnapKit (~> 4.0.0)
+  - Toolbar
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - PromiseKit
+    - ReverseExtension
+    - SnapKit
+    - Toolbar
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  PromiseKit: 743e497a5f505a470d3bbbf4ce0663c1268af0a4
+  ReverseExtension: 5c7ca8c165f47e9bde8e26084d5e7bf21ad4f5a6
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  Toolbar: 4321f97ec8ea5f20ecee5a55e505a319bd5e3021
+
+PODFILE CHECKSUM: be130587867e559a38b1d46a20057cbdec2adf99
+
+COCOAPODS: 1.10.1

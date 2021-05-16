@@ -14,9 +14,11 @@
 		26D795EF2648B3FF00CC1713 /* ChatbotApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26D795ED2648B3FF00CC1713 /* ChatbotApp.xcdatamodeld */; };
 		26D795F12648B40100CC1713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26D795F02648B40100CC1713 /* Assets.xcassets */; };
 		26D795F42648B40100CC1713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D795F22648B40100CC1713 /* LaunchScreen.storyboard */; };
+		99DC6281AE2689D0864903D4 /* libPods-ChatbotApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8737269BBB32CFCEEE8C549A /* libPods-ChatbotApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11A450202232816677C96266 /* Pods-ChatbotApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatbotApp.debug.xcconfig"; path = "Target Support Files/Pods-ChatbotApp/Pods-ChatbotApp.debug.xcconfig"; sourceTree = "<group>"; };
 		26D795E12648B3FF00CC1713 /* ChatbotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatbotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D795E42648B3FF00CC1713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D795E62648B3FF00CC1713 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		26D795F02648B40100CC1713 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26D795F32648B40100CC1713 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26D795F52648B40100CC1713 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E8C22B8356310319DF49705 /* Pods-ChatbotApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatbotApp.release.xcconfig"; path = "Target Support Files/Pods-ChatbotApp/Pods-ChatbotApp.release.xcconfig"; sourceTree = "<group>"; };
+		8737269BBB32CFCEEE8C549A /* libPods-ChatbotApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChatbotApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99DC6281AE2689D0864903D4 /* libPods-ChatbotApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				26D795E32648B3FF00CC1713 /* ChatbotApp */,
 				26D795E22648B3FF00CC1713 /* Products */,
+				79BF9866B97BE598CB039148 /* Pods */,
+				A52AC3994BE20C4E2C18DFC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +77,24 @@
 			path = ChatbotApp;
 			sourceTree = "<group>";
 		};
+		79BF9866B97BE598CB039148 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11A450202232816677C96266 /* Pods-ChatbotApp.debug.xcconfig */,
+				6E8C22B8356310319DF49705 /* Pods-ChatbotApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A52AC3994BE20C4E2C18DFC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8737269BBB32CFCEEE8C549A /* libPods-ChatbotApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +102,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26D795F82648B40100CC1713 /* Build configuration list for PBXNativeTarget "ChatbotApp" */;
 			buildPhases = (
+				22CA6D434531BB6A6E44D15C /* [CP] Check Pods Manifest.lock */,
 				26D795DD2648B3FF00CC1713 /* Sources */,
 				26D795DE2648B3FF00CC1713 /* Frameworks */,
 				26D795DF2648B3FF00CC1713 /* Resources */,
@@ -134,6 +160,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22CA6D434531BB6A6E44D15C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChatbotApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		26D795DD2648B3FF00CC1713 /* Sources */ = {
@@ -287,6 +338,7 @@
 		};
 		26D795F92648B40100CC1713 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11A450202232816677C96266 /* Pods-ChatbotApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -305,6 +357,7 @@
 		};
 		26D795FA2648B40100CC1713 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E8C22B8356310319DF49705 /* Pods-ChatbotApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
