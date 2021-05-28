@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		26D795E52648B3FF00CC1713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E42648B3FF00CC1713 /* AppDelegate.swift */; };
 		26D795E72648B3FF00CC1713 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E62648B3FF00CC1713 /* SceneDelegate.swift */; };
-		26D795E92648B3FF00CC1713 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E82648B3FF00CC1713 /* ViewController.swift */; };
+		26D795E92648B3FF00CC1713 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E82648B3FF00CC1713 /* HomeViewController.swift */; };
 		26D795EC2648B3FF00CC1713 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D795EA2648B3FF00CC1713 /* Main.storyboard */; };
 		26D795EF2648B3FF00CC1713 /* ChatbotApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26D795ED2648B3FF00CC1713 /* ChatbotApp.xcdatamodeld */; };
 		26D795F12648B40100CC1713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26D795F02648B40100CC1713 /* Assets.xcassets */; };
@@ -20,7 +20,7 @@
 		26D795E12648B3FF00CC1713 /* ChatbotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatbotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D795E42648B3FF00CC1713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D795E62648B3FF00CC1713 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		26D795E82648B3FF00CC1713 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		26D795E82648B3FF00CC1713 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		26D795EB2648B3FF00CC1713 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26D795EE2648B3FF00CC1713 /* ChatbotApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ChatbotApp.xcdatamodel; sourceTree = "<group>"; };
 		26D795F02648B40100CC1713 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			children = (
 				26D795E42648B3FF00CC1713 /* AppDelegate.swift */,
 				26D795E62648B3FF00CC1713 /* SceneDelegate.swift */,
-				26D795E82648B3FF00CC1713 /* ViewController.swift */,
+				26D795E82648B3FF00CC1713 /* HomeViewController.swift */,
 				26D795EA2648B3FF00CC1713 /* Main.storyboard */,
 				26D795F02648B40100CC1713 /* Assets.xcassets */,
 				26D795F22648B40100CC1713 /* LaunchScreen.storyboard */,
@@ -140,7 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D795E92648B3FF00CC1713 /* ViewController.swift in Sources */,
+				26D795E92648B3FF00CC1713 /* HomeViewController.swift in Sources */,
 				26D795EF2648B3FF00CC1713 /* ChatbotApp.xcdatamodeld in Sources */,
 				26D795E52648B3FF00CC1713 /* AppDelegate.swift in Sources */,
 				26D795E72648B3FF00CC1713 /* SceneDelegate.swift in Sources */,
