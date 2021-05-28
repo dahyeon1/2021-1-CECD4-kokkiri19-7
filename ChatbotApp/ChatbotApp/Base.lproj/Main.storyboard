@@ -12,18 +12,52 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChatbotApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="ChatbotApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="중구청 소식" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYp-mR-d5a">
+                                <rect key="frame" x="0.0" y="44" width="414" height="27.5"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="메인화면 소식" translatesAutoresizingMaskIntoConstraints="NO" id="nzy-0U-T0j">
+                                <rect key="frame" x="0.0" y="71.5" width="414" height="713.5"/>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="zxK-4k-vaB">
+                                <rect key="frame" x="0.0" y="785" width="414" height="28"/>
+                                <connections>
+                                    <action selector="pageChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="POG-kl-LSx"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qYp-mR-d5a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1iV-IY-M2h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nzy-0U-T0j" secondAttribute="trailing" id="4oE-GA-RHv"/>
+                            <constraint firstItem="nzy-0U-T0j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AYn-Qp-rPE"/>
+                            <constraint firstItem="nzy-0U-T0j" firstAttribute="top" secondItem="qYp-mR-d5a" secondAttribute="bottom" id="Ntw-eQ-EcU"/>
+                            <constraint firstItem="zxK-4k-vaB" firstAttribute="top" secondItem="nzy-0U-T0j" secondAttribute="bottom" id="Pr1-qA-RXp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zxK-4k-vaB" secondAttribute="trailing" id="THj-GC-rkt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zxK-4k-vaB" secondAttribute="bottom" id="VQ9-5U-jqQ"/>
+                            <constraint firstItem="qYp-mR-d5a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hHp-Gd-yW1"/>
+                            <constraint firstItem="zxK-4k-vaB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ng3-1N-Zl0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qYp-mR-d5a" secondAttribute="trailing" id="zBF-d5-teh"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="K5z-vM-dH9"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="nzy-0U-T0j" id="4Ef-8F-6QE"/>
+                        <outlet property="pageControl" destination="zxK-4k-vaB" id="TuA-2C-qgn"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="920" y="90"/>
+            <point key="canvasLocation" x="918.84057971014499" y="89.732142857142847"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xny-k5-jPA">
@@ -152,8 +186,12 @@
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="메인화면 소식" width="958" height="1570"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
