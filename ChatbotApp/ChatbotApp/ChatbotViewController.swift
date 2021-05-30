@@ -149,6 +149,10 @@ class ChatbotViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    @objc func hide() {
+        self.textView?.resignFirstResponder()
+    }
+    
     // MARK:- send message
     private func sendMessage(_ message: Message) {
         messages.append(message)
