@@ -42,6 +42,7 @@ class ChatbotViewController: UIViewController, UITextViewDelegate {
         super.loadView()
         
         configureAutoLayout()
+        setupChatbotViewControllerBackground()
     }
     
     private func configureAutoLayout() {
@@ -52,6 +53,14 @@ class ChatbotViewController: UIViewController, UITextViewDelegate {
             make.left.equalTo(self.view)
             make.top.equalTo(self.view.snp.topMargin)
         }
+    }
+    
+    private func setupChatbotViewControllerBackground() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.chatBackgroundEnd.cgColor, UIColor.chatBackgroundStart.cgColor]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame = self.view.bounds
+        containerView.layer.addSublayer(gradientLayer)
     }
     
     override func viewDidLoad() {
