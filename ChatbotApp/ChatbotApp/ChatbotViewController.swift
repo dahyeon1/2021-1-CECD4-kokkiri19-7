@@ -189,4 +189,14 @@ extension ChatbotViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         self.isMenuHidden = true
     }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        let size: CGSize = textView.sizeThatFits(textView.bounds.size)
+        if let constraint: NSLayoutConstraint = self.constraint {
+            textView.removeConstraint(constraint)
+        }
+        self.constraint = textView.heightAnchor.constraint(equalToConstant: size.height)
+        self.constraint?.priority = UILayoutPriority.defaultHigh
+        self.constraint?.isActive = true
+    }
 }
