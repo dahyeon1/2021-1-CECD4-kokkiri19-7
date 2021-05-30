@@ -10,7 +10,7 @@ import ReverseExtension
 import Toolbar
 import SnapKit
 
-class ChatbotViewController: UIViewController, UITextViewDelegate {
+class ChatbotViewController: UIViewController {
     
     //MARK: Properties
     // tool bar
@@ -151,6 +151,29 @@ class ChatbotViewController: UIViewController, UITextViewDelegate {
     
     @objc func hide() {
         self.textView?.resignFirstResponder()
+    }
+    
+    @objc final func keyboardWillShow(notification: Notification) {
+        moveToolbar(up: true, notification: notification)
+    }
+    
+    @objc final func keyboardWillHide(notification: Notification) {
+        moveToolbar(up: false, notification: notification)
+    }
+    
+    final func moveToolbar(up: Bool, notification: Notification) {
+        guard let userInfo = notification.userInfo else {
+            return
+        }
+        let animationDuration: TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
+        let keyboardHeight = up ? -(userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height : 0
+        
+        // Animation
+        self.toolbarBottomConstraint?.constant = keyboardHeight
+        UIView.animate(withDuration: animationDuration, animations: {
+            self.toolbar.layoutIfNeeded()
+        }, completion: nil)
+        self.isMenuHidden = up
     }
     
     // MARK:- send message
