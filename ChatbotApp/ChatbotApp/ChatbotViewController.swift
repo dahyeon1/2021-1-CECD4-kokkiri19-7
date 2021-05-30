@@ -95,6 +95,7 @@ class ChatbotViewController: UIViewController, UITextViewDelegate {
         configureToolbar()
     }
     
+    //MARK: Toolbar
     private func configureToolbar() {
         setupToolbar()
         setupToolbarWrapperView()
@@ -133,5 +134,26 @@ class ChatbotViewController: UIViewController, UITextViewDelegate {
     private func addTapGesture() {
         let gestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hide))
         self.view.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    @objc func send() {
+        if self.textView!.text != "" {
+            let message = Message(text: self.textView!.text!, date: Date(), type: .user)
+            self.sendMessage(message)
+            
+            self.textView?.text = nil
+            if let constraint: NSLayoutConstraint = self.constraint {
+                self.textView?.removeConstraint(constraint)
+            }
+            self.toolbar.setNeedsLayout()
+        }
+    }
+    
+    // MARK:- send message
+    private func sendMessage(_ message: Message) {
+        messages.append(message)
+        chatbotTableView.beginUpdates()
+        chatbotTableView.re.insertRows(at: [IndexPath(row: messages.count - 1, section: 0)], with: .automatic)
+        chatbotTableView.endUpdates()
     }
 }
