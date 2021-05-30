@@ -92,5 +92,46 @@ class ChatbotViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureToolbar()
+    }
+    
+    private func configureToolbar() {
+        setupToolbar()
+        setupToolbarWrapperView()
+        addTapGesture()
+    }
+    
+    private func setupToolbar() {
+        let textView: UITextView = UITextView(frame: .zero)
+        textView.delegate = self
+        textView.font = UIFont.systemFont(ofSize: 14)
+        textView.backgroundColor = UIColor.black.withAlphaComponent(0.30)
+        textView.textColor = .white
+        self.textView = textView
+        textView.layer.cornerRadius = 10
+        
+        toolbarTextView = ToolbarItem(customView: textView)
+        toolbarSendButton = ToolbarItem(title: "SEND", target: self, action: #selector(send))
+        toolbarSendButton!.tintColor = .mainGreen
+        toolbarSendButton!.setEnabled(true, animated: false)
+        toolbar.setItems([toolbarTextView!, toolbarSendButton!], animated: false)
+        toolbar.backgroundColor = .black
+    }
+    
+    private func setupToolbarWrapperView() {
+        let toolbarWrapperView = UIView()
+        toolbarWrapperView.backgroundColor = .grayBlue
+        toolbar.insertSubview(toolbarWrapperView, at: 1)
+        toolbarWrapperView.snp.makeConstraints { (make) -> Void in
+            make.bottom.equalTo(toolbar)
+            make.right.equalTo(toolbar)
+            make.left.equalTo(toolbar)
+            make.top.equalTo(toolbar)
+        }
+    }
+    
+    private func addTapGesture() {
+        let gestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hide))
+        self.view.addGestureRecognizer(gestureRecognizer)
     }
 }
