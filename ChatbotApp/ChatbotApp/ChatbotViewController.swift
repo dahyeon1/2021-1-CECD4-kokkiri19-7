@@ -184,3 +184,9 @@ class ChatbotViewController: UIViewController {
         chatbotTableView.endUpdates()
     }
 }
+
+extension ChatbotViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.isMenuHidden = true
+    }
+}
