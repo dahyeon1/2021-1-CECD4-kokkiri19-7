@@ -44,6 +44,7 @@ class ChatbotViewController: UIViewController, UITextViewDelegate {
         configureAutoLayout()
         setupChatbotViewControllerBackground()
         addToolBar()
+        addChatbotTableView()
     }
     
     private func configureAutoLayout() {
@@ -76,6 +77,16 @@ class ChatbotViewController: UIViewController, UITextViewDelegate {
             make.left.equalTo(containerView)
             make.top.equalTo(toolbar.snp.bottom)
             make.height.equalTo(100)
+        }
+    }
+    
+    private func addChatbotTableView() {
+        containerView.addSubview(chatbotTableView)
+        chatbotTableView.snp.makeConstraints { (make) -> Void in
+            make.bottom.equalTo(toolbar.snp.top)
+            make.right.equalTo(containerView)
+            make.left.equalTo(containerView)
+            make.top.equalTo(containerView)
         }
     }
     
