@@ -1,0 +1,24 @@
+PODS:
+  - ReverseExtension (0.6.0)
+  - SnapKit (4.0.1)
+  - Toolbar (0.7.3)
+
+DEPENDENCIES:
+  - ReverseExtension
+  - SnapKit (~> 4.0.0)
+  - Toolbar
+
+SPEC REPOS:
+  trunk:
+    - ReverseExtension
+    - SnapKit
+    - Toolbar
+
+SPEC CHECKSUMS:
+  ReverseExtension: 5c7ca8c165f47e9bde8e26084d5e7bf21ad4f5a6
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  Toolbar: 4321f97ec8ea5f20ecee5a55e505a319bd5e3021
+
+PODFILE CHECKSUM: 1db2fde5f07a50fd1e664db6bfb832c2c030ce7c
+
+COCOAPODS: 1.10.1
