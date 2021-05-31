@@ -166,7 +166,7 @@ class ChatbotViewController: UIViewController {
             return
         }
         let animationDuration: TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! NSNumber).doubleValue
-        let keyboardHeight = up ? -(userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height : 0
+        let keyboardHeight = up ? -(userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height + (self.tabBarController?.tabBar.frame.size.height)! : 0
         
         // Animation
         self.toolbarBottomConstraint?.constant = keyboardHeight
@@ -176,12 +176,49 @@ class ChatbotViewController: UIViewController {
         self.isMenuHidden = up
     }
     
-    // MARK:- send message
+    //MARK:- send message
     private func sendMessage(_ message: Message) {
         messages.append(message)
         chatbotTableView.beginUpdates()
         chatbotTableView.re.insertRows(at: [IndexPath(row: messages.count - 1, section: 0)], with: .automatic)
         chatbotTableView.endUpdates()
+    }
+    
+    //MARK:- Message TableView
+    private func configureMessageTableView() {
+        setupTableViewDelegate()
+    }
+    
+    private func setupTableViewDelegate() {
+        chatbotTableView.dataSource = self
+        chatbotTableView.delegate = self
+        chatbotTableView.re.delegate = self
+    }
+}
+
+extension ChatbotViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let message = messages[messages.count - (indexPath.row + 1)]
+        switch message.type {
+        case .user:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.cellID, for: indexPath) as? UserTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            cell.configure(with: message)
+            return cell
+        case .botText:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TextResponseTableViewCell.cellID, for: indexPath) as? TextResponseTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            cell.configure(with: message)
+            return cell
+        }
     }
 }
 
