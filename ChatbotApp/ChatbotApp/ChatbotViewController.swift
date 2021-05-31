@@ -94,6 +94,7 @@ class ChatbotViewController: UIViewController {
         super.viewDidLoad()
         configureToolbar()
         configureMessageTableView()
+        sendWelcomeMessage()
     }
     
     //MARK: Toolbar
@@ -209,6 +210,16 @@ class ChatbotViewController: UIViewController {
         chatbotTableView.separatorStyle = .none
         chatbotTableView.rowHeight = UITableView.automaticDimension
         chatbotTableView.backgroundColor = .clear
+    }
+    
+    // MARK:- welcome message
+    private func sendWelcomeMessage() {
+        let firstTime = true
+        if firstTime {
+            let text = "안녕하세요! 모두의 챗봇에 오신걸 환영합니다."
+            let message = Message(text: text, date: Date(), type: .botText)
+            messages.append(message)
+        }
     }
 }
 
