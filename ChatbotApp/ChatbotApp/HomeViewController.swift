@@ -15,8 +15,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupHomeViewControllerBackground()
         setupPageControl()
         setupSwipeGesture()
+    }
+    
+    private func setupHomeViewControllerBackground() {
+        self.view.backgroundColor = UIColor.chatBackgroundEnd
     }
     
     private func setupPageControl() {
