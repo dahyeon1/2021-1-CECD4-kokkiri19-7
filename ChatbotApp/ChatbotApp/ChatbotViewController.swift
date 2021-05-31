@@ -187,12 +187,18 @@ class ChatbotViewController: UIViewController {
     //MARK:- Message TableView
     private func configureMessageTableView() {
         setupTableViewDelegate()
+        registerTableViewCell()
     }
     
     private func setupTableViewDelegate() {
         chatbotTableView.dataSource = self
         chatbotTableView.delegate = self
         chatbotTableView.re.delegate = self
+    }
+    
+    private func registerTableViewCell() {
+        chatbotTableView.register(UINib(nibName: UserTableViewCell.cellID, bundle: nil), forCellReuseIdentifier: UserTableViewCell.cellID)
+        chatbotTableView.register(UINib(nibName: TextResponseTableViewCell.cellID, bundle: nil), forCellReuseIdentifier: TextResponseTableViewCell.cellID)
     }
 }
 
