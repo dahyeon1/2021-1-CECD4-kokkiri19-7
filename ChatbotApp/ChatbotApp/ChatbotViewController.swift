@@ -97,6 +97,16 @@ class ChatbotViewController: UIViewController {
         sendWelcomeMessage()
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     //MARK: Toolbar
     private func configureToolbar() {
         setupToolbar()
@@ -114,7 +124,7 @@ class ChatbotViewController: UIViewController {
         textView.layer.cornerRadius = 10
         
         toolbarTextView = ToolbarItem(customView: textView)
-        toolbarSendButton = ToolbarItem(title: "SEND", target: self, action: #selector(send))
+        toolbarSendButton = ToolbarItem(title: "전송", target: self, action: #selector(send))
         toolbarSendButton!.tintColor = .mainGreen
         toolbarSendButton!.setEnabled(true, animated: false)
         toolbar.setItems([toolbarTextView!, toolbarSendButton!], animated: false)
