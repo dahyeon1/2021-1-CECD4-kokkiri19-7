@@ -13,6 +13,7 @@
 		269186D12663FFDC001EB4BA /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269186CF2663FFDC001EB4BA /* UserTableViewCell.xib */; };
 		269186D426640173001EB4BA /* TextResponseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269186D226640173001EB4BA /* TextResponseTableViewCell.swift */; };
 		269186D526640173001EB4BA /* TextResponseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269186D326640173001EB4BA /* TextResponseTableViewCell.xib */; };
+		269186DC266533C0001EB4BA /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269186DB266533C0001EB4BA /* RecommendationViewController.swift */; };
 		26D795E52648B3FF00CC1713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E42648B3FF00CC1713 /* AppDelegate.swift */; };
 		26D795E72648B3FF00CC1713 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E62648B3FF00CC1713 /* SceneDelegate.swift */; };
 		26D795E92648B3FF00CC1713 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D795E82648B3FF00CC1713 /* HomeViewController.swift */; };
@@ -31,6 +32,7 @@
 		269186CF2663FFDC001EB4BA /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		269186D226640173001EB4BA /* TextResponseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextResponseTableViewCell.swift; sourceTree = "<group>"; };
 		269186D326640173001EB4BA /* TextResponseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextResponseTableViewCell.xib; sourceTree = "<group>"; };
+		269186DB266533C0001EB4BA /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		26D795E12648B3FF00CC1713 /* ChatbotApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatbotApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D795E42648B3FF00CC1713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D795E62648B3FF00CC1713 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			children = (
 				26D795E82648B3FF00CC1713 /* HomeViewController.swift */,
 				26E4160D26609733008D509E /* ChatbotViewController.swift */,
+				269186DB266533C0001EB4BA /* RecommendationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				269186D02663FFDC001EB4BA /* UserTableViewCell.swift in Sources */,
 				26D795E52648B3FF00CC1713 /* AppDelegate.swift in Sources */,
 				26D795E72648B3FF00CC1713 /* SceneDelegate.swift in Sources */,
+				269186DC266533C0001EB4BA /* RecommendationViewController.swift in Sources */,
 				269186D426640173001EB4BA /* TextResponseTableViewCell.swift in Sources */,
 				269186CD2663EE49001EB4BA /* Message.swift in Sources */,
 			);
