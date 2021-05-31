@@ -93,6 +93,7 @@ class ChatbotViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureToolbar()
+        configureMessageTableView()
     }
     
     //MARK: Toolbar
@@ -188,6 +189,7 @@ class ChatbotViewController: UIViewController {
     private func configureMessageTableView() {
         setupTableViewDelegate()
         registerTableViewCell()
+        setupTableView()
     }
     
     private func setupTableViewDelegate() {
@@ -199,6 +201,14 @@ class ChatbotViewController: UIViewController {
     private func registerTableViewCell() {
         chatbotTableView.register(UINib(nibName: UserTableViewCell.cellID, bundle: nil), forCellReuseIdentifier: UserTableViewCell.cellID)
         chatbotTableView.register(UINib(nibName: TextResponseTableViewCell.cellID, bundle: nil), forCellReuseIdentifier: TextResponseTableViewCell.cellID)
+    }
+    
+    private func setupTableView() {
+        chatbotTableView.tableFooterView = UIView()
+        chatbotTableView.estimatedRowHeight = 56
+        chatbotTableView.separatorStyle = .none
+        chatbotTableView.rowHeight = UITableView.automaticDimension
+        chatbotTableView.backgroundColor = .clear
     }
 }
 
