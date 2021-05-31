@@ -116,7 +116,7 @@
                         <viewLayoutGuide key="safeArea" id="7Zm-uX-uxP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="추천" id="1bE-8i-Bbp"/>
+                    <tabBarItem key="tabBarItem" title="추천" image="star" catalog="system" id="1bE-8i-Bbp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UJK-gX-r0Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -178,6 +178,7 @@
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="메인화면 소식" width="958" height="1570"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
