@@ -7,7 +7,7 @@
 
 import UIKit
 
-var images = ["메인화면 소식1", "메인화면 소식2", "메인화면 소식3", "메인화면 소식4"]
+var images = ["메인화면소식1", "메인화면소식2", "메인화면소식3", "메인화면소식4"]
 
 class HomeViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
