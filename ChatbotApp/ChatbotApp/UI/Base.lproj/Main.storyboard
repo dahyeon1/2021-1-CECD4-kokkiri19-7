@@ -116,19 +116,10 @@
         <!--개인정보-->
         <scene sceneID="2Jw-6j-Ttd">
             <objects>
-                <viewController id="G6U-Ao-uNX" sceneMemberID="viewController">
+                <viewController id="G6U-Ao-uNX" customClass="PersonalInformationViewController" customModule="ChatbotApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bKJ-YW-8lH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="personInfo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69N-bc-bgj">
-                                <rect key="frame" x="196" y="338" width="82" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="DuI-WI-8B2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
