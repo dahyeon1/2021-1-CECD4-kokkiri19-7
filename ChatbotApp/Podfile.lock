@@ -1,24 +1,50 @@
 PODS:
+  - ApplozicCore (8.1.0)
+  - ApplozicSwift (6.0.0):
+    - ApplozicSwift/Complete (= 6.0.0)
+  - ApplozicSwift/Complete (6.0.0):
+    - ApplozicCore (~> 8.1.0)
+    - ApplozicSwift/RichMessageKit
+    - Kingfisher (~> 5.14.0)
+    - SwipeCellKit (~> 2.7.1)
+  - ApplozicSwift/RichMessageKit (6.0.0)
+  - Kingfisher (5.14.1):
+    - Kingfisher/Core (= 5.14.1)
+  - Kingfisher/Core (5.14.1)
+  - Kommunicate (6.0.0):
+    - ApplozicSwift (~> 6.0.0)
   - ReverseExtension (0.6.0)
   - SnapKit (4.0.1)
+  - SwipeCellKit (2.7.1)
   - Toolbar (0.7.3)
 
 DEPENDENCIES:
+  - Kommunicate
   - ReverseExtension
   - SnapKit (~> 4.0.0)
   - Toolbar
 
 SPEC REPOS:
   trunk:
+    - ApplozicCore
+    - ApplozicSwift
+    - Kingfisher
+    - Kommunicate
     - ReverseExtension
     - SnapKit
+    - SwipeCellKit
     - Toolbar
 
 SPEC CHECKSUMS:
+  ApplozicCore: db1ccbf9e98788a7a32550486831b13019f29dad
+  ApplozicSwift: cd0f2f23df075d0ea2f48806e33394cf4b17c121
+  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  Kommunicate: 57bf06f324c8127bdef60fe280dc57c5b26bad3f
   ReverseExtension: 5c7ca8c165f47e9bde8e26084d5e7bf21ad4f5a6
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
   Toolbar: 4321f97ec8ea5f20ecee5a55e505a319bd5e3021
 
-PODFILE CHECKSUM: 1db2fde5f07a50fd1e664db6bfb832c2c030ce7c
+PODFILE CHECKSUM: 86192610a008f0d7010c7778b64bd38696a3d6e3
 
 COCOAPODS: 1.10.1
