@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setupHomeViewControllerBackground() {
-        self.view.backgroundColor = UIColor.chatBackgroundEnd
+        self.view.backgroundColor = UIColor.white
     }
     
     private func setupPageControl() {

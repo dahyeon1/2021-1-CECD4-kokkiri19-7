@@ -16,4 +16,7 @@ target 'ChatbotApp' do
   #Messages TableView
   pod 'ReverseExtension'
 
+  #Connect with DialogFlow
+  pod 'Kommunicate'
+
 end
