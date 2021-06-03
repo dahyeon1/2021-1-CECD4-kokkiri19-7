@@ -34,4 +34,18 @@ final class PersonalInformationViewController: UIViewController {
             print("로그인에 성공하였습니다.")
         }
     }
+    
+    private func setupChatbotNavigationBar() {
+        let kmNavigationBarProxy = UINavigationBar.appearance(whenContainedInInstancesOf: [KMBaseNavigationViewController.self])
+        kmNavigationBarProxy.isTranslucent = false
+        // Navigation Bar's Background Color
+        kmNavigationBarProxy.barTintColor = UIColor.chatBackgroundStart
+        // Navigation Bar's Tint color
+        kmNavigationBarProxy.tintColor = UIColor.white
+        // Navigation Bar's Title color
+        kmNavigationBarProxy.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        Kommunicate.defaultConfiguration.hideFaqButtonInConversationList = true // Hide from Conversation List screen
+        Kommunicate.defaultConfiguration.hideFaqButtonInConversationView = true // Hide from Conversation screen
+    }
 }
