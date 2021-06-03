@@ -48,4 +48,12 @@ final class PersonalInformationViewController: UIViewController {
         Kommunicate.defaultConfiguration.hideFaqButtonInConversationList = true // Hide from Conversation List screen
         Kommunicate.defaultConfiguration.hideFaqButtonInConversationView = true // Hide from Conversation screen
     }
+    
+    private func setupChatbotMessage() {
+        KMMessageStyle.receivedBubble.color = UIColor.darkGray
+        KMMessageStyle.receivedMessage = KMStyle(font: .systemFont(ofSize: 14), text: .white)
+        
+        KMMessageStyle.sentBubble.color = UIColor.mainGreen
+        KMMessageStyle.sentMessage = KMStyle(font: .systemFont(ofSize: 14), text: .black)
+    }
 }
