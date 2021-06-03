@@ -12,11 +12,12 @@ final class PersonalInformationViewController: UIViewController {
     @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
     let userID = Kommunicate.randomId()
     let kmUser = KMUser()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewControllerBackground()
         configureChatbot()
+        setupNotificationCenter()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +30,7 @@ final class PersonalInformationViewController: UIViewController {
         self.view.backgroundColor = UIColor.chatBackgroundEnd
     }
     
+    //MARK: - start chatbot
     private func startChatbot() {
         if Kommunicate.isLoggedIn {
             createConversation()
@@ -101,10 +103,31 @@ final class PersonalInformationViewController: UIViewController {
         Kommunicate.defaultConfiguration.hideAudioOptionInChatBar = true
     }
     
-    //MARK: SetUpLoadingIndicatorView
+    //MARK: - setup LoadingIndicatorView
     private func setUpLoadingIndicatorView() {
         self.view.bringSubviewToFront(loadingIndicatorView)
         loadingIndicatorView.color = .grey100
         loadingIndicatorView.startAnimating()
+    }
+    
+    //MARK: - setup Notification
+    private func setupNotificationCenter() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didReceiveConversationClosed),
+                                               name: Notification.Name(rawValue: "ConversationClosed"),
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(didReceiveConversationLaunched),
+                                               name: Notification.Name(rawValue: "ConversationLaunched"),
+                                               object: nil)
+    }
+    
+    @objc func didReceiveConversationLaunched(_ notification: Notification) {
+        self.loadingIndicatorView.stopAnimating()
+    }
+    
+    @objc func didReceiveConversationClosed(_ notification: Notification) {
+        _ = self.tabBarController?.selectedIndex = 0
     }
 }
