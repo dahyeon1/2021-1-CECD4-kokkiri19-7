@@ -22,6 +22,16 @@ final class PersonalInformationViewController: UIViewController {
         self.view.backgroundColor = UIColor.chatBackgroundEnd
     }
     
+    private func startChatbot() {
+        if Kommunicate.isLoggedIn {
+            createConversation()
+        }
+        else {
+            registerUser()
+            createConversation()
+        }
+    }
+    
     private func createConversation() {
         let botId = ["aibot-mgack"]
         Kommunicate.createConversation(
