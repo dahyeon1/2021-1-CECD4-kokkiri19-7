@@ -22,6 +22,19 @@ final class PersonalInformationViewController: UIViewController {
         self.view.backgroundColor = UIColor.chatBackgroundEnd
     }
     
+    private func createConversation() {
+        let botId = ["aibot-mgack"]
+        Kommunicate.createConversation(
+            userId: userID,
+            botIds: botId,
+            useLastConversation: false,
+            completion: { response in
+                guard !response.isEmpty else {return}
+                Kommunicate.showConversationWith(groupId: response, from: self, completionHandler: { success in
+                })
+            })
+    }
+    
     private func registerUser() {
         kmUser.userId = userID
         kmUser.displayName = "사용자"
