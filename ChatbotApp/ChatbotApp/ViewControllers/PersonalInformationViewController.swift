@@ -58,6 +58,14 @@ final class PersonalInformationViewController: UIViewController {
         }
     }
     
+    //MARK: - configure chatbot
+    private func configureChatbot() {
+        Kommunicate.defaultConfiguration.backgroundColor = UIColor.chatBackgroundEnd
+        setupChatbotNavigationBar()
+        setupChatbotMessage()
+        setupChatbar()
+    }
+    
     private func setupChatbotNavigationBar() {
         let kmNavigationBarProxy = UINavigationBar.appearance(whenContainedInInstancesOf: [KMBaseNavigationViewController.self])
         kmNavigationBarProxy.isTranslucent = false
