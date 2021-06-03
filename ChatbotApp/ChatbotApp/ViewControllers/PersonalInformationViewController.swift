@@ -9,16 +9,23 @@ import UIKit
 import Kommunicate
 
 final class PersonalInformationViewController: UIViewController {
-    
+    @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
     let userID = Kommunicate.randomId()
     let kmUser = KMUser()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupPersonalInformationViewControllerBackground()
+        setupViewControllerBackground()
+        configureChatbot()
     }
     
-    private func setupPersonalInformationViewControllerBackground() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setUpLoadingIndicatorView()
+        startChatbot()
+    }
+    
+    private func setupViewControllerBackground() {
         self.view.backgroundColor = UIColor.chatBackgroundEnd
     }
     
@@ -92,5 +99,12 @@ final class PersonalInformationViewController: UIViewController {
         // To hide all the attachment options
         Kommunicate.defaultConfiguration.chatBar.optionsToShow = .none
         Kommunicate.defaultConfiguration.hideAudioOptionInChatBar = true
+    }
+    
+    //MARK: SetUpLoadingIndicatorView
+    private func setUpLoadingIndicatorView() {
+        self.view.bringSubviewToFront(loadingIndicatorView)
+        loadingIndicatorView.color = .grey100
+        loadingIndicatorView.startAnimating()
     }
 }
