@@ -56,4 +56,10 @@ final class PersonalInformationViewController: UIViewController {
         KMMessageStyle.sentBubble.color = UIColor.mainGreen
         KMMessageStyle.sentMessage = KMStyle(font: .systemFont(ofSize: 14), text: .black)
     }
+    
+    private func setupChatbar() {
+        // To hide all the attachment options
+        Kommunicate.defaultConfiguration.chatBar.optionsToShow = .none
+        Kommunicate.defaultConfiguration.hideAudioOptionInChatBar = true
+    }
 }
