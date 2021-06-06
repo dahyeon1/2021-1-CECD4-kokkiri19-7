@@ -44,4 +44,8 @@
   <img src="https://user-images.githubusercontent.com/45090197/120930246-6c539100-c727-11eb-918b-a887319191b0.gif" width="250" height="650"> 
 </p>
 
+### 서버통신
+![sever_communication](https://user-images.githubusercontent.com/45090197/120932027-1da9f500-c72f-11eb-835c-099d38f0e04a.gif)
+
 ### 크롤링
+![crawling_prototype]()
