@@ -1,7 +1,7 @@
 # 2021-1-CECD4-코끼리19
 
 ### 목차
-- [팀원 및 멘토](#팀원)
+- [팀원](#팀원)
 - [프로젝트 주제](#프로젝트-주제)
 - [프로젝트 구성도](#프로젝트-구성도)
 - [프로젝트 흐름도](#프로젝트-흐름도)
@@ -39,8 +39,9 @@
 ## 기능 영상
 ### 챗봇
 <p>
-  <img src="https://user-images.githubusercontent.com/45090197/120929721-20075180-c725-11eb-8151-a014ec9c0d54.gif" width="300" height="650">
-  <img src="https://user-images.githubusercontent.com/45090197/120930242-69f13700-c727-11eb-9df5-075df3d986f2.gif" width="300" height="650">
-  <img src="https://user-images.githubusercontent.com/45090197/120930246-6c539100-c727-11eb-918b-a887319191b0.gif" width="300" height="650"> 
+  <img src="https://user-images.githubusercontent.com/45090197/120929721-20075180-c725-11eb-8151-a014ec9c0d54.gif" width="250" height="650">
+  <img src="https://user-images.githubusercontent.com/45090197/120930242-69f13700-c727-11eb-9df5-075df3d986f2.gif" width="250" height="650">
+  <img src="https://user-images.githubusercontent.com/45090197/120930246-6c539100-c727-11eb-918b-a887319191b0.gif" width="250" height="650"> 
 </p>
+
 ### 크롤링
