@@ -3,10 +3,9 @@
 ### 목차
 - [팀원 및 멘토](#팀원)
 - [프로젝트 주제](#프로젝트-주제)
-- [프로젝트 ](#프로젝트-주제)
 - [프로젝트 구성도](#프로젝트-구성도)
 - [프로젝트 흐름도](#프로젝트-흐름도)
-- [기능](#기능)
+- [기능 영상](#기능-영상)
 
 ## 팀원
 |  <center>학번</center> | 이름 | 학과 | 이메일 |
@@ -29,9 +28,19 @@
 - 크롤링 정보를 가공하여 사용자에게 제공 
 - 기존의 입력된 개인 정보와 검색 기록을 토대로 비슷한 유형의 혜택 · 복지 · 소식 정보 추천 
 
-
 ## 프로젝트 구성도 
+프로젝트 구성도는 아래와 같습니다. <br>
+<img src="https://i.imgur.com/9GjcqiT.png" width="75%" height="100%">
 
 ## 프로젝트 흐름도
+프로젝트 흐름도는 아래와 같습니다. <br>
+![project_flowchart](https://i.imgur.com/pxMOyXO.png)
 
-## 기능 
+## 기능 영상
+### 챗봇
+<p>
+  <img src="https://user-images.githubusercontent.com/45090197/120929721-20075180-c725-11eb-8151-a014ec9c0d54.gif" width="300" height="650">
+  <img src="https://user-images.githubusercontent.com/45090197/120930242-69f13700-c727-11eb-9df5-075df3d986f2.gif" width="300" height="650">
+  <img src="https://user-images.githubusercontent.com/45090197/120930246-6c539100-c727-11eb-918b-a887319191b0.gif" width="300" height="650"> 
+</p>
+### 크롤링
