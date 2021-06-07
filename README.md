@@ -45,7 +45,7 @@
 </p>
 
 ### 서버통신
-![sever_communication](https://user-images.githubusercontent.com/45090197/120932027-1da9f500-c72f-11eb-835c-099d38f0e04a.gif)
+![sever_communication](https://user-images.githubusercontent.com/45090197/121052047-f584c980-c7f4-11eb-9493-ede937d338ac.gif)
 
 ### 크롤링
 ![crawling_prototype](https://user-images.githubusercontent.com/45090197/121007155-adea4780-c7cc-11eb-84a2-6cd22e3aa4cb.gif)
