@@ -8,6 +8,6 @@
 import Foundation
 
 enum Configuration {
-    static let AppID = "27c785abede1dd83afc76732df5e2524c"
-    static let APIKey = "Kg5OXbFgZstAuwTEhdbvRi1O8UsOAfcm"
+    static let AppID = "2d01bd9e6ff221e53af603cf8a78b8ee8"
+    static let APIKey = "27z0qxegmv1Q93CQOvHQOWhxURaieLgq"
 }
