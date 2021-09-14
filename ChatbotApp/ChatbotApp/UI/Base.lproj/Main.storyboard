@@ -83,7 +83,7 @@
         <!--챗봇-->
         <scene sceneID="81a-Uz-woq">
             <objects>
-                <viewController id="KNL-Aj-R6c" customClass="PersonalInformationViewController" customModule="ChatbotApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KNL-Aj-R6c" customClass="ChatbotViewController" customModule="ChatbotApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="91Q-ui-aIQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,7 +127,7 @@
         <!--개인정보-->
         <scene sceneID="2Jw-6j-Ttd">
             <objects>
-                <viewController id="G6U-Ao-uNX" customClass="ChatbotViewController" customModule="ChatbotApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="G6U-Ao-uNX" customClass="PersonalInformationViewController" customModule="ChatbotApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bKJ-YW-8lH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
