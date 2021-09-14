@@ -9,125 +9,71 @@ import UIKit
 import Kommunicate
 
 final class PersonalInformationViewController: UIViewController {
-    @IBOutlet weak var loadingIndicatorView: UIActivityIndicatorView!
-    let userID = Kommunicate.randomId()
-    let kmUser = KMUser()
+    private var loginView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private var verticalStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.spacing = 10
+        return stackView
+    }()
+    
+    private var kakaoLoginButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 10
+        button.backgroundColor = .systemYellow
+        return button
+    }()
+    
+    private var naverLoginButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 10
+        button.backgroundColor = .systemGreen
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewControllerBackground()
-        configureChatbot()
-        setupNotificationCenter()
+        configureLoginView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setUpLoadingIndicatorView()
-        startChatbot()
-    }
-    
-    private func setupViewControllerBackground() {
-        self.view.backgroundColor = UIColor.chatBackgroundEnd
-    }
-    
-    //MARK: - start chatbot
-    private func startChatbot() {
-        if Kommunicate.isLoggedIn {
-            createConversation()
-        }
-        else {
-            registerUser()
-            createConversation()
-        }
-    }
-    
-    private func createConversation() {
-        let botId = ["aibot-mgack"]
-        Kommunicate.createConversation(
-            userId: userID,
-            botIds: botId,
-            useLastConversation: false,
-            completion: { response in
-                guard !response.isEmpty else {return}
-                Kommunicate.showConversationWith(groupId: response, from: self, completionHandler: { success in
-                })
-            })
-    }
-    
-    private func registerUser() {
-        kmUser.userId = userID
-        kmUser.displayName = "사용자"
-        kmUser.applicationId = Configuration.AppID
+    private func configureLoginView() {
+        view.addSubview(loginView)
+        loginView.addSubview(verticalStackView)
+        configureLoginButtons()
         
-        Kommunicate.registerUser(kmUser) { response, error in
-            guard error == nil else {
-                return
-            }
-            print("로그인에 성공하였습니다.")
-        }
+        NSLayoutConstraint.activate([
+            loginView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            loginView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            loginView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            loginView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            
+            verticalStackView.centerYAnchor.constraint(equalTo: loginView.centerYAnchor),
+            verticalStackView.centerXAnchor.constraint(equalTo: loginView.centerXAnchor),
+            verticalStackView.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: 20),
+            verticalStackView.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -20)
+        ])
     }
     
-    //MARK: - configure chatbot
-    private func configureChatbot() {
-        Kommunicate.defaultConfiguration.backgroundColor = UIColor.chatBackgroundEnd
-        setupChatbotNavigationBar()
-        setupChatbotMessage()
-        setupChatbar()
-    }
-    
-    private func setupChatbotNavigationBar() {
-        let kmNavigationBarProxy = UINavigationBar.appearance(whenContainedInInstancesOf: [KMBaseNavigationViewController.self])
-        kmNavigationBarProxy.isTranslucent = false
-        // Navigation Bar's Background Color
-        kmNavigationBarProxy.barTintColor = UIColor.chatBackgroundStart
-        // Navigation Bar's Tint color
-        kmNavigationBarProxy.tintColor = UIColor.white
-        // Navigation Bar's Title color
-        kmNavigationBarProxy.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    private func configureLoginButtons() {
+        verticalStackView.addArrangedSubview(kakaoLoginButton)
+        verticalStackView.addArrangedSubview(naverLoginButton)
         
-        Kommunicate.defaultConfiguration.hideFaqButtonInConversationList = true // Hide from Conversation List screen
-        Kommunicate.defaultConfiguration.hideFaqButtonInConversationView = true // Hide from Conversation screen
-    }
-    
-    private func setupChatbotMessage() {
-        KMMessageStyle.receivedBubble.color = UIColor.darkGray
-        KMMessageStyle.receivedMessage = KMStyle(font: .systemFont(ofSize: 14), text: .white)
+        kakaoLoginButton.setTitle("카카오로 로그인", for: .normal)
+        kakaoLoginButton.titleLabel?.font = .preferredFont(forTextStyle: .headline)
+        kakaoLoginButton.setTitleColor(.black, for: .normal)
         
-        KMMessageStyle.sentBubble.color = UIColor.mainGreen
-        KMMessageStyle.sentMessage = KMStyle(font: .systemFont(ofSize: 14), text: .black)
-    }
-    
-    private func setupChatbar() {
-        // To hide all the attachment options
-        Kommunicate.defaultConfiguration.chatBar.optionsToShow = .none
-        Kommunicate.defaultConfiguration.hideAudioOptionInChatBar = true
-    }
-    
-    //MARK: - setup LoadingIndicatorView
-    private func setUpLoadingIndicatorView() {
-        self.view.bringSubviewToFront(loadingIndicatorView)
-        loadingIndicatorView.color = .grey100
-        loadingIndicatorView.startAnimating()
-    }
-    
-    //MARK: - setup Notification
-    private func setupNotificationCenter() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(didReceiveConversationClosed),
-                                               name: Notification.Name(rawValue: "ConversationClosed"),
-                                               object: nil)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(didReceiveConversationLaunched),
-                                               name: Notification.Name(rawValue: "ConversationLaunched"),
-                                               object: nil)
-    }
-    
-    @objc func didReceiveConversationLaunched(_ notification: Notification) {
-        self.loadingIndicatorView.stopAnimating()
-    }
-    
-    @objc func didReceiveConversationClosed(_ notification: Notification) {
-        _ = self.tabBarController?.selectedIndex = 0
+        naverLoginButton.setTitle("네이버로 로그인", for: .normal)
+        naverLoginButton.titleLabel?.font = .preferredFont(forTextStyle: .headline)
+        naverLoginButton.setTitleColor(.white, for: .normal)
     }
 }
