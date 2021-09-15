@@ -19,4 +19,5 @@ target 'ChatbotApp' do
   #Connect with DialogFlow
   pod 'Kommunicate'
 
+  pod 'KakaoSDK'
 end

@@ -8,16 +8,29 @@
 import UIKit
 import CoreData
 import Kommunicate
+import KakaoSDKCommon
+import KakaoSDKAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        KakaoSDKCommon.initSDK(appKey: Configuration.KakaoNativeAppKey)
         Kommunicate.setup(applicationId: Configuration.AppID)
+        if #available(iOS 13, *) {
+            return true
+        }
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+
+        if (AuthApi.isKakaoTalkLoginUrl(url)) { // 카카오톡이 깔려있는지 확인
+            return AuthController.handleOpenUrl(url: url)
+        }
+
+        return false
     }
 
     // MARK: UISceneSession Lifecycle
