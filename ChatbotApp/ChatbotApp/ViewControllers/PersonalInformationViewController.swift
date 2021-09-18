@@ -95,6 +95,30 @@ final class PersonalInformationViewController: UIViewController {
         }
     }
     
+    //MARK:- DoneButton
+    @IBAction private func didDoneButtonTouchedUp(_ sender: UIButton) {
+        if checkIsDataChanged() {
+            errorMessageTextLabel.isHidden = true
+            let currentYear = Calendar.current.component(.year, from: Date())
+            let selectedDate = ageDatePicker.calendar.dateComponents([.year,.month,.day], from: ageDatePicker.date)
+            
+            User.shared.gender = Gender(rawValue: sexSegmentControl.titleForSegment(at: sexSegmentControl.selectedSegmentIndex)!)!
+            User.shared.birthday = ageDatePicker.date
+            User.shared.age = currentYear - selectedDate.year!
+            User.shared.city = cityTextField.text
+            User.shared.province = provinceTextField.text
+            
+            //MARK:-TODO server
+            // 서버로 데이터 전송해주기 + 화면 전환 필요
+            settingScrollView.isHidden = true
+            configureSettedView()
+            settedScrollView.isHidden = false
+        }
+        else {
+            errorMessageTextLabel.isHidden = false
+        }
+    }
+    
     private func checkIsDataChanged() -> Bool {
         let currentDate = Calendar.current.dateComponents([.year, .month, .day], from: Date())
         let selectedDate = ageDatePicker.calendar.dateComponents([.year,.month,.day], from: ageDatePicker.date)
