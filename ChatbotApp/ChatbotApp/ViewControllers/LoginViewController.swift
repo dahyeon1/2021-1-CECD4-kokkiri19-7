@@ -13,6 +13,7 @@ final class LoginViewController: UIViewController {
     static let identifier = "LoginViewController"
     @IBOutlet weak var kakaoLoginButton: UIButton!
     @IBOutlet weak var naverLoginButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ final class LoginViewController: UIViewController {
                 }
                 
                 NotificationCenter.default.post(name: NSNotification.Name.LoginSuccess, object: nil)
+                //MARK:-TODO 서버에 데이터 있는지 없는지 확인하기..? 이후 있으면 notification에 담아서 보내자
                 self?.dismiss(animated: true, completion: nil)
             }
         }
@@ -33,5 +35,10 @@ final class LoginViewController: UIViewController {
     
     @IBAction private func loginWithNaver(_ sender: UIButton) {
         // TODO
+    }
+    
+    @IBAction private func didCancelButtonTouchedUp(_ sender: UIButton) {
+        NotificationCenter.default.post(name: NSNotification.Name.CancelButtonTouchedUp, object: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 }
