@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KakaoSDKUser
 
 final class PersonalInformationViewController: UIViewController {
     static let identifier = "PersonalInformationViewController"
@@ -34,6 +35,27 @@ final class PersonalInformationViewController: UIViewController {
         registerNotification()
     }
     
+    private func getKakaoUserInformation() {
+        //MARK:-TODO
+        // 만약 서버에서 데이터가 없는 경우에는 여기서 사용자 정보를 가져옴과 동시에
+        // UserSettingView를 보여주자
+        UserApi.shared.me { (user, error) in
+            if let error = error {
+                print(error)
+            }
+            let nickname = user?.kakaoAccount?.profile?.nickname
+            let email = user?.kakaoAccount?.email
+            
+            User.shared.nickname = nickname
+            User.shared.email = email
+            
+            DispatchQueue.main.async {
+                self.nicknameLabel.text = nickname
+                self.emailLabel.text = email
+            }
+        }
+    }
+    
     //MARK:- Notification
     private func registerNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveLoginSuccess), name: NSNotification.Name.LoginSuccess, object: nil)
@@ -41,7 +63,7 @@ final class PersonalInformationViewController: UIViewController {
     
     @objc private func didReceiveLoginSuccess(_ sender: Notification) {
         //MARK:TODO
-        // 서버로부터 어떠한 응답이 왔는지에 따라서 어떤 화면 보여줄지 분기처리 
+        // 서버로부터 어떠한 응답이 왔는지에 따라서 어떤 화면 보여줄지 분기처리
         getKakaoUserInformation()
     }
 }
