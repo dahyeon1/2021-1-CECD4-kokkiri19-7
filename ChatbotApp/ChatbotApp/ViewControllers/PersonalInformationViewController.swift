@@ -95,6 +95,29 @@ final class PersonalInformationViewController: UIViewController {
         }
     }
     
+    private func checkIsDataChanged() -> Bool {
+        let currentDate = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+        let selectedDate = ageDatePicker.calendar.dateComponents([.year,.month,.day], from: ageDatePicker.date)
+        
+        if currentDate.year == selectedDate.year &&
+            currentDate.month == selectedDate.month &&
+            currentDate.day == selectedDate.day {
+            errorMessageTextLabel.text = "생년월일을 선택해주세요."
+            return false
+        }
+        
+        if cityTextField.text!.isEmpty {
+            errorMessageTextLabel.text = "시를 선택해주세요."
+            return false
+        }
+        
+        if provinceTextField.text!.isEmpty {
+            errorMessageTextLabel.text = "구를 선택해주세요."
+            return false
+        }
+        return true
+    }
+    
     //MARK: - ConfigurePickerView
     private func configurePickerView() {
         let pickerViewForCity = UIPickerView()
