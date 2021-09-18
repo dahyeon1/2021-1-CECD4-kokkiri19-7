@@ -7,6 +7,9 @@
 
 import UIKit
 import KakaoSDKUser
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
 
 final class PersonalInformationViewController: UIViewController {
     static let identifier = "PersonalInformationViewController"
@@ -34,6 +37,39 @@ final class PersonalInformationViewController: UIViewController {
         super.viewDidLoad()
         registerNotification()
         configurePickerView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkTokenAndShowView()
+        //MARK:-TODO
+        //Server 응답에 따라서 settedView를 보여줄지 settingView를 보여줄지 결정하는 로직 필요
+    }
+    
+    private func checkTokenAndShowView() {
+        if AuthApi.hasToken() {
+            UserApi.shared.accessTokenInfo { [weak self] (_ , error) in
+                if let error = error {
+                    if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() {
+                        // 토근이 유효하지 않은 경우에는 로그인화면 제공
+                        self?.moveToLoginViewController()
+                    }
+                    else {
+                        // 기타 에러 처리
+                    }
+                }
+                else {
+                    //MARK:-TODO
+                    // 토큰이 유효한 경우에는 바로 다음 화면으로 넘기면 됨
+                    // 여기서도 settedView이냐,, settingView이냐?
+                    self?.configureUserSettingView()
+                }
+            }
+        }
+        // 토큰이 없는 경우 로그인 필요
+        else {
+            moveToLoginViewController()
+        }
     }
     
     private func moveToLoginViewController() {
