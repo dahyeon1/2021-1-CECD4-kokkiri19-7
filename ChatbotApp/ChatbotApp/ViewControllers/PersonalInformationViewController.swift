@@ -111,7 +111,7 @@ final class PersonalInformationViewController: UIViewController {
             //MARK:-TODO server
             // 서버로 데이터 전송해주기 + 화면 전환 필요
             settingScrollView.isHidden = true
-            configureSettedView()
+            configureUserSettedView()
             settedScrollView.isHidden = false
         }
         else {
@@ -140,6 +140,31 @@ final class PersonalInformationViewController: UIViewController {
             return false
         }
         return true
+    }
+    
+    //MARK:- UserSettedView
+    private func configureUserSettedView() {
+        guard let nickname = User.shared.nickname,
+              let email = User.shared.email,
+              let sex = User.shared.gender,
+              let birthday = User.shared.birthday,
+              let city = User.shared.city,
+              let province = User.shared.province else {
+            return
+        }
+        
+        DispatchQueue.main.async {
+            self.settedNicknameLabel.text = nickname
+            self.settedEmailLabel.text = email
+            switch sex {
+            case .male:
+                self.settedGenderLabel.text = Gender.male.rawValue
+            case .female:
+                self.settedGenderLabel.text = Gender.female.rawValue
+            }
+            self.settedBirthdayLabel.text = CustomDateFormatter.birthdayFormatter.string(from: birthday)
+            self.settedLocationLabel.text = "\(city) \(province)"
+        }
     }
     
     //MARK: - ConfigurePickerView
