@@ -33,6 +33,7 @@ final class PersonalInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNotification()
+        configurePickerView()
     }
     
     private func moveToLoginViewController() {
@@ -94,6 +95,35 @@ final class PersonalInformationViewController: UIViewController {
         }
     }
     
+    //MARK: - ConfigurePickerView
+    private func configurePickerView() {
+        let pickerViewForCity = UIPickerView()
+        pickerViewForCity.delegate = self
+        pickerViewForCity.dataSource = self
+        pickerViewForCity.tag = 1
+        cityTextField.inputView = pickerViewForCity
+        
+        let pickerViewForProvince = UIPickerView()
+        pickerViewForProvince.delegate = self
+        pickerViewForProvince.dataSource = self
+        pickerViewForProvince.tag = 2
+        provinceTextField.inputView = pickerViewForProvince
+        
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let flexibleSpace = UIBarButtonItem(systemItem: .flexibleSpace)
+        let selectButton = UIBarButtonItem(title: "선택", style: .plain, target: self, action: #selector(didSelectButtonTouchedUp(_:)))
+        toolBar.setItems([flexibleSpace, selectButton], animated: true)
+        
+        cityTextField.inputAccessoryView = toolBar
+        provinceTextField.inputAccessoryView = toolBar
+    }
+    
+    @objc private func didSelectButtonTouchedUp(_ sender: UIPickerView) {
+        cityTextField.resignFirstResponder()
+        provinceTextField.resignFirstResponder()
+    }
+    
     //MARK:- Notification
     private func registerNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveLoginSuccess), name: NSNotification.Name.LoginSuccess, object: nil)
@@ -108,4 +138,71 @@ final class PersonalInformationViewController: UIViewController {
 
 extension Notification.Name {
     static let LoginSuccess = Notification.Name("LoginSuccess")
+}
+
+//MARK:- PickerView Delegate, Datasource
+extension PersonalInformationViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView.tag == 1 {
+            return City.list.count
+        }
+        else if pickerView.tag == 2 {
+            guard let selected = cityTextField.text,
+                  let city = City(rawValue: selected) else {
+                return 0
+            }
+            
+            switch city {
+            case .서울:
+                return 서울.list.count
+            case .경기도:
+                return 경기도.list.count
+            }
+        }
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView.tag == 1 {
+            return City.list[row].rawValue
+        }
+        else if pickerView.tag == 2 {
+            guard let selected = cityTextField.text,
+                  let city = City(rawValue: selected) else {
+                return ""
+            }
+            
+            switch city {
+            case .서울:
+                return 서울.list[row].rawValue
+            case .경기도:
+                return 경기도.list[row].rawValue
+            }
+        }
+        return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView.tag == 1 {
+            cityTextField.text = City.list[row].rawValue
+            provinceTextField.text = nil
+        }
+        else if pickerView.tag == 2 {
+            guard let selected = cityTextField.text,
+                  let city = City(rawValue: selected) else {
+                return
+            }
+            
+            switch city {
+            case .서울:
+                provinceTextField.text = 서울.list[row].rawValue
+            case .경기도:
+                provinceTextField.text = 경기도.list[row].rawValue
+            }
+        }
+    }
 }
