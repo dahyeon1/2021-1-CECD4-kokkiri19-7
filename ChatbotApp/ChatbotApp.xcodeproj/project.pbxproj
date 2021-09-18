@@ -25,6 +25,7 @@
 		26D795F12648B40100CC1713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26D795F02648B40100CC1713 /* Assets.xcassets */; };
 		26D795F42648B40100CC1713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D795F22648B40100CC1713 /* LaunchScreen.storyboard */; };
 		26DA405026F4EE9800F07DA4 /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA404F26F4EE9800F07DA4 /* CustomDateFormatter.swift */; };
+		26DA407426F5CB3500F07DA4 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA407326F5CB3500F07DA4 /* Locations.swift */; };
 		26E4160E26609733008D509E /* ChatbotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4160D26609733008D509E /* ChatbotViewController.swift */; };
 		26E4D75926F06FE200315A67 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75826F06FE200315A67 /* TabBarController.swift */; };
 		26E4D75B26F0D95E00315A67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75A26F0D95E00315A67 /* User.swift */; };
@@ -53,6 +54,7 @@
 		26D795F32648B40100CC1713 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26D795F52648B40100CC1713 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26DA404F26F4EE9800F07DA4 /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
+		26DA407326F5CB3500F07DA4 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
 		26E4160D26609733008D509E /* ChatbotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotViewController.swift; sourceTree = "<group>"; };
 		26E4D75826F06FE200315A67 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		26E4D75A26F0D95E00315A67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				269186CA2663EAA2001EB4BA /* Colors.swift */,
 				26DA404F26F4EE9800F07DA4 /* CustomDateFormatter.swift */,
+				26DA407326F5CB3500F07DA4 /* Locations.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26DA407426F5CB3500F07DA4 /* Locations.swift in Sources */,
 				26E4160E26609733008D509E /* ChatbotViewController.swift in Sources */,
 				269186DF2665352E001EB4BA /* PersonalInformationViewController.swift in Sources */,
 				269186CB2663EAA2001EB4BA /* Colors.swift in Sources */,
