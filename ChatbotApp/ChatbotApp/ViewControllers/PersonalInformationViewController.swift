@@ -35,6 +35,15 @@ final class PersonalInformationViewController: UIViewController {
         registerNotification()
     }
     
+    private func moveToLoginViewController() {
+        guard let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: LoginViewController.identifier) as? LoginViewController else {
+            return
+        }
+        
+        loginViewController.modalPresentationStyle = .fullScreen
+        self.present(loginViewController, animated: true, completion: nil)
+    }
+    
     private func getKakaoUserInformation() {
         //MARK:-TODO
         // 만약 서버에서 데이터가 없는 경우에는 여기서 사용자 정보를 가져옴과 동시에
