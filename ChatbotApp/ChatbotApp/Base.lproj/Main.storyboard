@@ -75,7 +75,6 @@
                         <segue destination="KNL-Aj-R6c" kind="relationship" relationship="viewControllers" id="8dz-mV-E1M"/>
                         <segue destination="WHq-9O-7tV" kind="relationship" relationship="viewControllers" id="CdK-tB-Xtb"/>
                         <segue destination="G6U-Ao-uNX" kind="relationship" relationship="viewControllers" id="MnV-tL-9Fp"/>
-                        <segue destination="IQg-7e-6BP" kind="relationship" relationship="viewControllers" id="hd6-H9-Boy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xnh-Cs-E6E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -596,22 +595,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORf-ec-zWx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1794" y="1528"/>
-        </scene>
-        <!--설정-->
-        <scene sceneID="qrj-u1-wL7">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="haX-eV-SOz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="IQg-7e-6BP" customClass="SettingViewController" customModule="ChatbotApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XaT-td-shC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ywa-gv-zWJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="설정" image="gearshape" catalog="system" id="FXF-T9-5xi"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="2619" y="854"/>
         </scene>
     </scenes>
     <resources>

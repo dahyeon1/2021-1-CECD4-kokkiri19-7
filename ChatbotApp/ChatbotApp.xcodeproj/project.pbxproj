@@ -90,14 +90,6 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		269186D8266531E6001EB4BA /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				26D795EA2648B3FF00CC1713 /* Main.storyboard */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		269186DA2665322F001EB4BA /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,11 +129,11 @@
 			children = (
 				269186E226654066001EB4BA /* Network */,
 				269186DA2665322F001EB4BA /* Models */,
-				269186D8266531E6001EB4BA /* UI */,
 				269186D7266531D7001EB4BA /* ViewControllers */,
 				269186D6266531A6001EB4BA /* Utilities */,
 				26D795E42648B3FF00CC1713 /* AppDelegate.swift */,
 				26D795E62648B3FF00CC1713 /* SceneDelegate.swift */,
+				26D795EA2648B3FF00CC1713 /* Main.storyboard */,
 				26D795F02648B40100CC1713 /* Assets.xcassets */,
 				26D795F22648B40100CC1713 /* LaunchScreen.storyboard */,
 				26D795F52648B40100CC1713 /* Info.plist */,
