@@ -24,11 +24,10 @@
 		26D795EF2648B3FF00CC1713 /* ChatbotApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26D795ED2648B3FF00CC1713 /* ChatbotApp.xcdatamodeld */; };
 		26D795F12648B40100CC1713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26D795F02648B40100CC1713 /* Assets.xcassets */; };
 		26D795F42648B40100CC1713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D795F22648B40100CC1713 /* LaunchScreen.storyboard */; };
+		26DA405026F4EE9800F07DA4 /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA404F26F4EE9800F07DA4 /* CustomDateFormatter.swift */; };
 		26E4160E26609733008D509E /* ChatbotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4160D26609733008D509E /* ChatbotViewController.swift */; };
 		26E4D75926F06FE200315A67 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75826F06FE200315A67 /* TabBarController.swift */; };
 		26E4D75B26F0D95E00315A67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75A26F0D95E00315A67 /* User.swift */; };
-		26E4D75F26F0FD7B00315A67 /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75E26F0FD7B00315A67 /* UserSettingView.swift */; };
-		26E4D76126F0FD8600315A67 /* UserSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26E4D76026F0FD8600315A67 /* UserSettingView.xib */; };
 		26E4D76326F1CAAC00315A67 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D76226F1CAAC00315A67 /* LoginViewController.swift */; };
 		331735ECF21A7CCF00EE20CB /* Pods_ChatbotApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CDA877AF6140B962DE85C3 /* Pods_ChatbotApp.framework */; };
 /* End PBXBuildFile section */
@@ -53,11 +52,10 @@
 		26D795F02648B40100CC1713 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26D795F32648B40100CC1713 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26D795F52648B40100CC1713 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26DA404F26F4EE9800F07DA4 /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		26E4160D26609733008D509E /* ChatbotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotViewController.swift; sourceTree = "<group>"; };
 		26E4D75826F06FE200315A67 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		26E4D75A26F0D95E00315A67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		26E4D75E26F0FD7B00315A67 /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
-		26E4D76026F0FD8600315A67 /* UserSettingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSettingView.xib; sourceTree = "<group>"; };
 		26E4D76226F1CAAC00315A67 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8C673E8732C45CACEEDD2C2D /* Pods-ChatbotApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatbotApp.release.xcconfig"; path = "Target Support Files/Pods-ChatbotApp/Pods-ChatbotApp.release.xcconfig"; sourceTree = "<group>"; };
 		A3CDA877AF6140B962DE85C3 /* Pods_ChatbotApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatbotApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				269186CA2663EAA2001EB4BA /* Colors.swift */,
+				26DA404F26F4EE9800F07DA4 /* CustomDateFormatter.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -113,8 +112,6 @@
 			children = (
 				269186CE2663FFDC001EB4BA /* UserTableViewCell.swift */,
 				269186D226640173001EB4BA /* TextResponseTableViewCell.swift */,
-				26E4D75E26F0FD7B00315A67 /* UserSettingView.swift */,
-				26E4D76026F0FD8600315A67 /* UserSettingView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,7 +248,6 @@
 			files = (
 				269186D12663FFDC001EB4BA /* UserTableViewCell.xib in Resources */,
 				26D795F42648B40100CC1713 /* LaunchScreen.storyboard in Resources */,
-				26E4D76126F0FD8600315A67 /* UserSettingView.xib in Resources */,
 				26D795F12648B40100CC1713 /* Assets.xcassets in Resources */,
 				269186D526640173001EB4BA /* TextResponseTableViewCell.xib in Resources */,
 				26D795EC2648B3FF00CC1713 /* Main.storyboard in Resources */,
@@ -315,9 +311,9 @@
 				269186D02663FFDC001EB4BA /* UserTableViewCell.swift in Sources */,
 				26D795E52648B3FF00CC1713 /* AppDelegate.swift in Sources */,
 				26D795E72648B3FF00CC1713 /* SceneDelegate.swift in Sources */,
-				26E4D75F26F0FD7B00315A67 /* UserSettingView.swift in Sources */,
 				26E4D75B26F0D95E00315A67 /* User.swift in Sources */,
 				269186DC266533C0001EB4BA /* RecommendationViewController.swift in Sources */,
+				26DA405026F4EE9800F07DA4 /* CustomDateFormatter.swift in Sources */,
 				269186D426640173001EB4BA /* TextResponseTableViewCell.swift in Sources */,
 				269186CD2663EE49001EB4BA /* Message.swift in Sources */,
 				26E4D76326F1CAAC00315A67 /* LoginViewController.swift in Sources */,
