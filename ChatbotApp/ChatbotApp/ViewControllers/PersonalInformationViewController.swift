@@ -21,6 +21,14 @@ final class PersonalInformationViewController: UIViewController {
     @IBOutlet weak var errorMessageTextLabel: UILabel!
     @IBOutlet weak var doneButton: UIButton!
     
+    //MARK:-properties for settedView
+    @IBOutlet weak var settedScrollView: UIScrollView!
+    @IBOutlet weak var settedNicknameLabel: UILabel!
+    @IBOutlet weak var settedEmailLabel: UILabel!
+    @IBOutlet weak var settedGenderLabel: UILabel!
+    @IBOutlet weak var settedBirthdayLabel: UILabel!
+    @IBOutlet weak var settedLocationLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
