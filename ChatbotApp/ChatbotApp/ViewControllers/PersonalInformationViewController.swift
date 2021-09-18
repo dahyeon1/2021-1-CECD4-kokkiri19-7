@@ -232,6 +232,39 @@ final class PersonalInformationViewController: UIViewController {
         provinceTextField.resignFirstResponder()
     }
     
+    //MARK:- TitleSettingButton
+    @IBAction func didSettingButtonTouchedUp(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let fix = UIAlertAction(title: "수정", style: .default) { [weak self] _ in
+            //MARK:-TODO
+            // server에서 내려주는 값으로 설정할 수 있도록 해야함
+            self?.configureUserSettingView()
+            self?.settingScrollView.isHidden = false
+            self?.settedScrollView.isHidden = true
+        }
+        let logout = UIAlertAction(title: "로그아웃", style: .destructive) { [weak self] _ in
+            UserApi.shared.logout { error in
+                if let error = error {
+                    print(error)
+                }
+                User.shared.reset()
+                self?.nicknameLabel.text = nil
+                self?.emailLabel.text = nil
+                self?.ageDatePicker.date = Date()
+                self?.cityTextField.text = nil
+                self?.provinceTextField.text = nil
+                
+                self?.moveToLoginViewController()
+            }
+        }
+        
+        alert.addAction(cancel)
+        alert.addAction(fix)
+        alert.addAction(logout)
+        self.present(alert, animated: true, completion: nil)
+    }
     //MARK:- Notification
     private func registerNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveLoginSuccess), name: NSNotification.Name.LoginSuccess, object: nil)
