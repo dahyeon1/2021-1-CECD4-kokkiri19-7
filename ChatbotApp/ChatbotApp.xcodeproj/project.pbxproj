@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		269186CB2663EAA2001EB4BA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269186CA2663EAA2001EB4BA /* Colors.swift */; };
-		269186CD2663EE49001EB4BA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269186CC2663EE49001EB4BA /* Message.swift */; };
-		269186D02663FFDC001EB4BA /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269186CE2663FFDC001EB4BA /* UserTableViewCell.swift */; };
-		269186D12663FFDC001EB4BA /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269186CF2663FFDC001EB4BA /* UserTableViewCell.xib */; };
-		269186D426640173001EB4BA /* TextResponseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269186D226640173001EB4BA /* TextResponseTableViewCell.swift */; };
-		269186D526640173001EB4BA /* TextResponseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269186D326640173001EB4BA /* TextResponseTableViewCell.xib */; };
 		269186DC266533C0001EB4BA /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269186DB266533C0001EB4BA /* RecommendationViewController.swift */; };
 		269186DF2665352E001EB4BA /* PersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269186DE2665352E001EB4BA /* PersonalInformationViewController.swift */; };
 		269186E12665359F001EB4BA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269186E02665359F001EB4BA /* SettingViewController.swift */; };
@@ -35,11 +30,6 @@
 
 /* Begin PBXFileReference section */
 		269186CA2663EAA2001EB4BA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		269186CC2663EE49001EB4BA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		269186CE2663FFDC001EB4BA /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		269186CF2663FFDC001EB4BA /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
-		269186D226640173001EB4BA /* TextResponseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextResponseTableViewCell.swift; sourceTree = "<group>"; };
-		269186D326640173001EB4BA /* TextResponseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextResponseTableViewCell.xib; sourceTree = "<group>"; };
 		269186DB266533C0001EB4BA /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		269186DE2665352E001EB4BA /* PersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationViewController.swift; sourceTree = "<group>"; };
 		269186E02665359F001EB4BA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -104,25 +94,13 @@
 			isa = PBXGroup;
 			children = (
 				26D795EA2648B3FF00CC1713 /* Main.storyboard */,
-				269186CF2663FFDC001EB4BA /* UserTableViewCell.xib */,
-				269186D326640173001EB4BA /* TextResponseTableViewCell.xib */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		269186D9266531F0001EB4BA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				269186CE2663FFDC001EB4BA /* UserTableViewCell.swift */,
-				269186D226640173001EB4BA /* TextResponseTableViewCell.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		269186DA2665322F001EB4BA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				269186CC2663EE49001EB4BA /* Message.swift */,
 				26E4D75A26F0D95E00315A67 /* User.swift */,
 			);
 			path = Models;
@@ -159,7 +137,6 @@
 			children = (
 				269186E226654066001EB4BA /* Network */,
 				269186DA2665322F001EB4BA /* Models */,
-				269186D9266531F0001EB4BA /* Views */,
 				269186D8266531E6001EB4BA /* UI */,
 				269186D7266531D7001EB4BA /* ViewControllers */,
 				269186D6266531A6001EB4BA /* Utilities */,
@@ -249,10 +226,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				269186D12663FFDC001EB4BA /* UserTableViewCell.xib in Resources */,
 				26D795F42648B40100CC1713 /* LaunchScreen.storyboard in Resources */,
 				26D795F12648B40100CC1713 /* Assets.xcassets in Resources */,
-				269186D526640173001EB4BA /* TextResponseTableViewCell.xib in Resources */,
 				26D795EC2648B3FF00CC1713 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,14 +287,11 @@
 				269186CB2663EAA2001EB4BA /* Colors.swift in Sources */,
 				26D795E92648B3FF00CC1713 /* HomeViewController.swift in Sources */,
 				26D795EF2648B3FF00CC1713 /* ChatbotApp.xcdatamodeld in Sources */,
-				269186D02663FFDC001EB4BA /* UserTableViewCell.swift in Sources */,
 				26D795E52648B3FF00CC1713 /* AppDelegate.swift in Sources */,
 				26D795E72648B3FF00CC1713 /* SceneDelegate.swift in Sources */,
 				26E4D75B26F0D95E00315A67 /* User.swift in Sources */,
 				269186DC266533C0001EB4BA /* RecommendationViewController.swift in Sources */,
 				26DA405026F4EE9800F07DA4 /* CustomDateFormatter.swift in Sources */,
-				269186D426640173001EB4BA /* TextResponseTableViewCell.swift in Sources */,
-				269186CD2663EE49001EB4BA /* Message.swift in Sources */,
 				26E4D76326F1CAAC00315A67 /* LoginViewController.swift in Sources */,
 				26E4D75926F06FE200315A67 /* TabBarController.swift in Sources */,
 				269186E426654077001EB4BA /* Configuration.swift in Sources */,
