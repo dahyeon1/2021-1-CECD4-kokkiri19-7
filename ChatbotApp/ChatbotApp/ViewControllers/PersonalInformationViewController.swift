@@ -44,11 +44,43 @@ final class PersonalInformationViewController: UIViewController {
         self.present(loginViewController, animated: true, completion: nil)
     }
     
+    //MARK:- UserSettingView
+    private func configureUserSettingView() {
+        //MARK:-TODO Fix server
+        // 사용자가 수정 버튼 누른 경우 or 사용자가 맨 처음에 사용하는 경우
+        // 서버로부터 사용자 데이터 받아와서 이를 표시해주기
+        DispatchQueue.main.async {
+            self.nicknameLabel.text = User.shared.nickname
+            self.emailLabel.text = User.shared.email
+            
+            if let sex = User.shared.gender {
+                switch sex {
+                case .male:
+                    self.sexSegmentControl.selectedSegmentIndex = 0
+                case .female:
+                    self.sexSegmentControl.selectedSegmentIndex = 1
+                }
+            }
+            
+            if let birthday = User.shared.birthday {
+                self.ageDatePicker.setDate(birthday, animated: true)
+            }
+            
+            if let city = User.shared.city {
+                self.cityTextField.text = city
+            }
+            
+            if let province = User.shared.province {
+                self.provinceTextField.text = province
+            }
+        }
+    }
+    
     private func getKakaoUserInformation() {
         //MARK:-TODO
         // 만약 서버에서 데이터가 없는 경우에는 여기서 사용자 정보를 가져옴과 동시에
         // UserSettingView를 보여주자
-        UserApi.shared.me { (user, error) in
+        UserApi.shared.me { [weak self] (user, error) in
             if let error = error {
                 print(error)
             }
@@ -58,10 +90,7 @@ final class PersonalInformationViewController: UIViewController {
             User.shared.nickname = nickname
             User.shared.email = email
             
-            DispatchQueue.main.async {
-                self.nicknameLabel.text = nickname
-                self.emailLabel.text = email
-            }
+            self?.configureUserSettingView()
         }
     }
     
