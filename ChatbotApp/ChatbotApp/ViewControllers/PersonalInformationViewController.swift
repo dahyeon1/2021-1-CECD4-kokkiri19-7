@@ -31,5 +31,21 @@ final class PersonalInformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerNotification()
     }
+    
+    //MARK:- Notification
+    private func registerNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceiveLoginSuccess), name: NSNotification.Name.LoginSuccess, object: nil)
+    }
+    
+    @objc private func didReceiveLoginSuccess(_ sender: Notification) {
+        //MARK:TODO
+        // 서버로부터 어떠한 응답이 왔는지에 따라서 어떤 화면 보여줄지 분기처리 
+        getKakaoUserInformation()
+    }
+}
+
+extension Notification.Name {
+    static let LoginSuccess = Notification.Name("LoginSuccess")
 }
