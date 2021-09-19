@@ -1,6 +1,11 @@
 # Created by https://www.gitignore.io/api/xcode,swift,cocoapods
 # Edit at https://www.gitignore.io/?templates=xcode,swift,cocoapods
 
+# Network configuration file
+Configuration.swift
+ChatbotApp/KakaoOpenSDK-1
+
+
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
 

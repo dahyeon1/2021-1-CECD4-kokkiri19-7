@@ -1,24 +1,56 @@
 PODS:
+  - Alamofire (5.4.3)
   - ApplozicCore (8.1.0)
-  - ApplozicSwift (6.0.0):
-    - ApplozicSwift/Complete (= 6.0.0)
-  - ApplozicSwift/Complete (6.0.0):
+  - ApplozicSwift (6.2.1):
+    - ApplozicSwift/Complete (= 6.2.1)
+  - ApplozicSwift/Complete (6.2.1):
     - ApplozicCore (~> 8.1.0)
     - ApplozicSwift/RichMessageKit
-    - Kingfisher (~> 5.14.0)
+    - Kingfisher (~> 6.3.0)
     - SwipeCellKit (~> 2.7.1)
-  - ApplozicSwift/RichMessageKit (6.0.0)
-  - Kingfisher (5.14.1):
-    - Kingfisher/Core (= 5.14.1)
-  - Kingfisher/Core (5.14.1)
-  - Kommunicate (6.0.0):
-    - ApplozicSwift (~> 6.0.0)
+  - ApplozicSwift/RichMessageKit (6.2.1)
+  - KakaoSDK (2.7.1):
+    - KakaoSDKAuth (= 2.7.1)
+    - KakaoSDKCommon (= 2.7.1)
+    - KakaoSDKLink (= 2.7.1)
+    - KakaoSDKNavi (= 2.7.1)
+    - KakaoSDKStory (= 2.7.1)
+    - KakaoSDKTalk (= 2.7.1)
+    - KakaoSDKTemplate (= 2.7.1)
+    - KakaoSDKUser (= 2.7.1)
+  - KakaoSDKAuth (2.7.1):
+    - KakaoSDKCommon (= 2.7.1)
+  - KakaoSDKCommon (2.7.1):
+    - KakaoSDKCommon/Common (= 2.7.1)
+    - KakaoSDKCommon/Network (= 2.7.1)
+  - KakaoSDKCommon/Common (2.7.1)
+  - KakaoSDKCommon/Network (2.7.1):
+    - Alamofire (~> 5.1)
+    - KakaoSDKCommon/Common (= 2.7.1)
+  - KakaoSDKLink (2.7.1):
+    - KakaoSDKCommon (= 2.7.1)
+    - KakaoSDKTemplate (= 2.7.1)
+  - KakaoSDKNavi (2.7.1):
+    - KakaoSDKCommon/Common (= 2.7.1)
+  - KakaoSDKStory (2.7.1):
+    - KakaoSDKUser (= 2.7.1)
+  - KakaoSDKTalk (2.7.1):
+    - KakaoSDKTemplate (= 2.7.1)
+    - KakaoSDKUser (= 2.7.1)
+  - KakaoSDKTemplate (2.7.1):
+    - KakaoSDKCommon/Common (= 2.7.1)
+  - KakaoSDKUser (2.7.1):
+    - KakaoSDKAuth (= 2.7.1)
+  - Kingfisher (6.3.1)
+  - Kommunicate (6.2.1):
+    - ApplozicSwift (~> 6.2.1)
   - ReverseExtension (0.6.0)
   - SnapKit (4.0.1)
   - SwipeCellKit (2.7.1)
   - Toolbar (0.7.3)
 
 DEPENDENCIES:
+  - KakaoSDK
   - Kommunicate
   - ReverseExtension
   - SnapKit (~> 4.0.0)
@@ -26,8 +58,18 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - ApplozicCore
     - ApplozicSwift
+    - KakaoSDK
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKLink
+    - KakaoSDKNavi
+    - KakaoSDKStory
+    - KakaoSDKTalk
+    - KakaoSDKTemplate
+    - KakaoSDKUser
     - Kingfisher
     - Kommunicate
     - ReverseExtension
@@ -36,15 +78,25 @@ SPEC REPOS:
     - Toolbar
 
 SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   ApplozicCore: db1ccbf9e98788a7a32550486831b13019f29dad
-  ApplozicSwift: cd0f2f23df075d0ea2f48806e33394cf4b17c121
-  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
-  Kommunicate: 57bf06f324c8127bdef60fe280dc57c5b26bad3f
+  ApplozicSwift: 7e9e6130877d323f3e1d5a4e4126b8e6545801df
+  KakaoSDK: 16f624b0bb273c9d42eb7a55f6e3cb84552fafab
+  KakaoSDKAuth: 70cfb1e4e60f543fd5f0ece2995c3b0e879c532e
+  KakaoSDKCommon: 48fe293e8970a8db8d10d5ca63600a7a8cc5f74c
+  KakaoSDKLink: 3f4d9b39b6d44d8efc78c4c0e30a6f83ef2e7b51
+  KakaoSDKNavi: ce85b1fad0722bfcd39136d817c5d2985f7c9908
+  KakaoSDKStory: feae12224aef67e79bd023464bc03f7791f97db4
+  KakaoSDKTalk: 61ec48c0fd724191a08dbd94cbd2b913ffbd6cbe
+  KakaoSDKTemplate: 7dd6755ae95c30355922105781dfd5c635348ff2
+  KakaoSDKUser: 5609a2679b6beda86298d63c45961953c7203101
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  Kommunicate: 22f36f42f7c83bd3f25d51e6a774c32924b1e985
   ReverseExtension: 5c7ca8c165f47e9bde8e26084d5e7bf21ad4f5a6
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
   Toolbar: 4321f97ec8ea5f20ecee5a55e505a319bd5e3021
 
-PODFILE CHECKSUM: 86192610a008f0d7010c7778b64bd38696a3d6e3
+PODFILE CHECKSUM: 67b868c61962a0afb7466dad41c615121c78dcd1
 
 COCOAPODS: 1.10.1
