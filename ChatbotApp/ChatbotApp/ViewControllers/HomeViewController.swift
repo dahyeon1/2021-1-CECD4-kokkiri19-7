@@ -21,6 +21,7 @@ final class HomeViewController: UIViewController {
         pageControl.currentPageIndicatorTintColor = UIColor.darkGray
         return pageControl
     }()
+    private var viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
