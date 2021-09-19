@@ -31,6 +31,11 @@ final class HomeViewController: UIViewController {
         configurePageControl()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.fetch()
+    }
+    
     private func configureImageCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
