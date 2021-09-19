@@ -25,7 +25,28 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        bindView()
+    }
+    
+    private func bindView() {
+        viewModel.nicknameLabelText.bind({ [weak self] text in
+            DispatchQueue.main.async {
+                self?.nicknameLabel.text = text
+            }
+        })
+        
+        viewModel.locationLabelText.bind({ [weak self] text in
+            DispatchQueue.main.async {
+                self?.locationLabel.text = text
+            }
+        })
+        
+        viewModel.bannerImages.bind({ [weak self] images in
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+                self?.pageControl.numberOfPages = images?.count ?? 0
+            }
+        })
     }
 }
 
