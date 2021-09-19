@@ -21,6 +21,9 @@
 		26D795F42648B40100CC1713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D795F22648B40100CC1713 /* LaunchScreen.storyboard */; };
 		26DA405026F4EE9800F07DA4 /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA404F26F4EE9800F07DA4 /* CustomDateFormatter.swift */; };
 		26DA407426F5CB3500F07DA4 /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA407326F5CB3500F07DA4 /* Locations.swift */; };
+		26DA407626F7549D00F07DA4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA407526F7549D00F07DA4 /* HomeViewModel.swift */; };
+		26DA407926F7556200F07DA4 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA407826F7556200F07DA4 /* Observable.swift */; };
+		26DA407C26F75AF000F07DA4 /* BannerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DA407B26F75AF000F07DA4 /* BannerImageCollectionViewCell.swift */; };
 		26E4160E26609733008D509E /* ChatbotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4160D26609733008D509E /* ChatbotViewController.swift */; };
 		26E4D75926F06FE200315A67 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75826F06FE200315A67 /* TabBarController.swift */; };
 		26E4D75B26F0D95E00315A67 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4D75A26F0D95E00315A67 /* User.swift */; };
@@ -45,6 +48,9 @@
 		26D795F52648B40100CC1713 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26DA404F26F4EE9800F07DA4 /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		26DA407326F5CB3500F07DA4 /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		26DA407526F7549D00F07DA4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		26DA407826F7556200F07DA4 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		26DA407B26F75AF000F07DA4 /* BannerImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		26E4160D26609733008D509E /* ChatbotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotViewController.swift; sourceTree = "<group>"; };
 		26E4D75826F06FE200315A67 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		26E4D75A26F0D95E00315A67 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -90,12 +96,12 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		269186DA2665322F001EB4BA /* Models */ = {
+		269186DA2665322F001EB4BA /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				26E4D75A26F0D95E00315A67 /* User.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		269186E226654066001EB4BA /* Network */ = {
@@ -127,8 +133,9 @@
 		26D795E32648B3FF00CC1713 /* ChatbotApp */ = {
 			isa = PBXGroup;
 			children = (
+				26DA407726F7554D00F07DA4 /* ViewModel */,
 				269186E226654066001EB4BA /* Network */,
-				269186DA2665322F001EB4BA /* Models */,
+				269186DA2665322F001EB4BA /* Model */,
 				269186D7266531D7001EB4BA /* ViewControllers */,
 				269186D6266531A6001EB4BA /* Utilities */,
 				26D795E42648B3FF00CC1713 /* AppDelegate.swift */,
@@ -140,6 +147,24 @@
 				26D795ED2648B3FF00CC1713 /* ChatbotApp.xcdatamodeld */,
 			);
 			path = ChatbotApp;
+			sourceTree = "<group>";
+		};
+		26DA407726F7554D00F07DA4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				26DA407A26F75AD500F07DA4 /* View */,
+				26DA407526F7549D00F07DA4 /* HomeViewModel.swift */,
+				26DA407826F7556200F07DA4 /* Observable.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		26DA407A26F75AD500F07DA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				26DA407B26F75AF000F07DA4 /* BannerImageCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5D1C125142846F11CFE33B15 /* Pods */ = {
@@ -276,6 +301,7 @@
 				26DA407426F5CB3500F07DA4 /* Locations.swift in Sources */,
 				26E4160E26609733008D509E /* ChatbotViewController.swift in Sources */,
 				269186DF2665352E001EB4BA /* PersonalInformationViewController.swift in Sources */,
+				26DA407626F7549D00F07DA4 /* HomeViewModel.swift in Sources */,
 				269186CB2663EAA2001EB4BA /* Colors.swift in Sources */,
 				26D795E92648B3FF00CC1713 /* HomeViewController.swift in Sources */,
 				26D795EF2648B3FF00CC1713 /* ChatbotApp.xcdatamodeld in Sources */,
@@ -284,6 +310,8 @@
 				26E4D75B26F0D95E00315A67 /* User.swift in Sources */,
 				269186DC266533C0001EB4BA /* RecommendationViewController.swift in Sources */,
 				26DA405026F4EE9800F07DA4 /* CustomDateFormatter.swift in Sources */,
+				26DA407C26F75AF000F07DA4 /* BannerImageCollectionViewCell.swift in Sources */,
+				26DA407926F7556200F07DA4 /* Observable.swift in Sources */,
 				26E4D76326F1CAAC00315A67 /* LoginViewController.swift in Sources */,
 				26E4D75926F06FE200315A67 /* TabBarController.swift in Sources */,
 				269186E426654077001EB4BA /* Configuration.swift in Sources */,
