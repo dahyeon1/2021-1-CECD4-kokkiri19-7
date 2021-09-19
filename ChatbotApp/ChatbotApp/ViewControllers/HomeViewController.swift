@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 var images = ["메인화면소식1", "메인화면소식2", "메인화면소식3", "메인화면소식4"]
 
@@ -26,7 +27,18 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        configureImageCollectionView()
         configurePageControl()
+    }
+    
+    private func configureImageCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(BannerImageCollectionViewCell.self, forCellWithReuseIdentifier: BannerImageCollectionViewCell.identifier)
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isPagingEnabled = true
+        collectionView.isScrollEnabled = true
+        collectionView.bounces = false
     }
     
     private func configurePageControl() {
@@ -59,3 +71,47 @@ final class HomeViewController: UIViewController {
     }
 }
 
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return viewModel.numberOfSections
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.bannerImages.value?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerImageCollectionViewCell.identifier, for: indexPath) as? BannerImageCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        if let image = self.viewModel.bannerImages.value?[indexPath.row] {
+            cell.configure(image: image)
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width, height: 250)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x / UIScreen.main.bounds.width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let url = URL(string: viewModel.urls.value?[indexPath.row] ?? "") {
+            let view: SFSafariViewController = SFSafariViewController(url: url)
+            self.present(view, animated: true, completion: nil)
+        }
+    }
+}
