@@ -18,42 +18,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="메인화면 소식" translatesAutoresizingMaskIntoConstraints="NO" id="nzy-0U-T0j">
-                                <rect key="frame" x="20" y="44" width="374" height="717"/>
-                            </imageView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="zxK-4k-vaB">
-                                <rect key="frame" x="0.0" y="761" width="414" height="28"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBP-Le-c7T">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="국민 " id="Mmj-KB-vfD"/>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="a2G-VK-Ja6">
+                                <rect key="frame" x="30" y="188" width="354" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연정민 님 안녕하세요~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOi-oQ-BnT">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시 중구의 최근 소식" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UA7-et-ugX">
+                                        <rect key="frame" x="0.0" y="60" width="354" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rry-O5-Zzh">
+                                <rect key="frame" x="0.0" y="328" width="414" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="FHi-f5-bjQ"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zZK-w8-SGG">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
                                 <connections>
-                                    <action selector="pageChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="POG-kl-LSx"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gW3-HH-E6y"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bLe-Xa-3Na"/>
                                 </connections>
-                            </pageControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="오늘의 소식" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBt-qE-jt3">
-                                <rect key="frame" x="0.0" y="789" width="414" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jBt-qE-jt3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4DG-mV-dfL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nzy-0U-T0j" secondAttribute="trailing" constant="20" id="4oE-GA-RHv"/>
-                            <constraint firstItem="nzy-0U-T0j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AYn-Qp-rPE"/>
-                            <constraint firstItem="zxK-4k-vaB" firstAttribute="top" secondItem="nzy-0U-T0j" secondAttribute="bottom" id="Pr1-qA-RXp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="nzy-0U-T0j" secondAttribute="top" id="Pvn-3e-VXA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zxK-4k-vaB" secondAttribute="trailing" id="THj-GC-rkt"/>
-                            <constraint firstItem="jBt-qE-jt3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b2l-Ae-seO"/>
-                            <constraint firstItem="jBt-qE-jt3" firstAttribute="top" secondItem="zxK-4k-vaB" secondAttribute="bottom" id="bHk-wU-BpG"/>
-                            <constraint firstItem="zxK-4k-vaB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ng3-1N-Zl0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jBt-qE-jt3" secondAttribute="trailing" id="xMY-rP-DUk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a2G-VK-Ja6" secondAttribute="trailing" constant="30" id="KTw-wW-3Rz"/>
+                            <constraint firstItem="a2G-VK-Ja6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="TrW-A4-5Qx"/>
+                            <constraint firstItem="a2G-VK-Ja6" firstAttribute="top" secondItem="QBP-Le-c7T" secondAttribute="bottom" constant="100" id="V07-mT-KuX"/>
+                            <constraint firstItem="QBP-Le-c7T" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Z3R-Z6-lKz"/>
+                            <constraint firstItem="QBP-Le-c7T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eEx-cS-drY"/>
+                            <constraint firstItem="QBP-Le-c7T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hhN-9p-UKP"/>
+                            <constraint firstItem="Rry-O5-Zzh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="jQ6-lB-FHB"/>
+                            <constraint firstItem="Rry-O5-Zzh" firstAttribute="top" secondItem="a2G-VK-Ja6" secondAttribute="bottom" constant="50" id="m9f-W2-r3l"/>
+                            <constraint firstItem="Rry-O5-Zzh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="p1x-gB-eqU"/>
+                            <constraint firstItem="Rry-O5-Zzh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yoi-ox-m6r"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="K5z-vM-dH9"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="imageView" destination="nzy-0U-T0j" id="4Ef-8F-6QE"/>
-                        <outlet property="pageControl" destination="zxK-4k-vaB" id="TuA-2C-qgn"/>
+                        <outlet property="collectionView" destination="Rry-O5-Zzh" id="GdN-M1-Zfg"/>
+                        <outlet property="locationLabel" destination="UA7-et-ugX" id="9w8-2Y-ebO"/>
+                        <outlet property="nicknameLabel" destination="dOi-oQ-BnT" id="SSf-lp-hsV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -606,7 +633,6 @@
         <image name="naver_login_button" width="300" height="45"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="star" catalog="system" width="128" height="116"/>
-        <image name="메인화면 소식" width="958" height="1570"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
