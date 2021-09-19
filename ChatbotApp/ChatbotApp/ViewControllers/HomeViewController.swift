@@ -26,6 +26,15 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindView()
+        configurePageControl()
+    }
+    
+    private func configurePageControl() {
+        self.view.addSubview(pageControl)
+        NSLayoutConstraint.activate([
+            pageControl.centerXAnchor.constraint(equalTo: self.collectionView.centerXAnchor),
+            pageControl.bottomAnchor.constraint(equalTo: self.collectionView.safeAreaLayoutGuide.topAnchor, constant: 230)
+        ])
     }
     
     private func bindView() {
